@@ -9,20 +9,17 @@
     <version>2.0.0</version>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <antlr4.version>4.10.1</antlr4.version>
         <akka.version>2.6.15</akka.version>
-        <micrometer.version>1.9.0</micrometer.version>
-        <google.people.version>v1-rev20210903-1.32.1</google.people.version>
-        <google.cal.version>v3-rev20220422-1.32.1</google.cal.version>
         <junit.version>5.8.2</junit.version>
         <jackson.version>2.13.3</jackson.version>
         <jdbi.version>3.28.0</jdbi.version>
-        <elastic.version>7.16.2</elastic.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <java.version>11</java.version>
         <slf4j.version>1.7.32</slf4j.version>
-        <kafka.version>3.1.0</kafka.version>
         <logback-classic.version>1.2.11</logback-classic.version>
         <poi.version>5.2.2</poi.version>
     </properties>

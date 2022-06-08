@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
-    <appender name="FILE"
+    <appender name="raven"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/Handyman-raven-vm.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -18,17 +19,12 @@
         </rollingPolicy>
     </appender>
 
-    <root level="info">
-        <appender-ref ref="FILE" />
+    <root>
+        <appender-ref ref="raven"/>
+        <appender-ref ref="CONSOLE"/>
     </root>
-
-    <logger name="org.hibernate" level="error"
-            additivity="false">
-        <appender-ref ref="FILE" />
+    <logger name="in.handyman"  additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="raven"/>
     </logger>
-
-    <root level="info">
-        <appender-ref ref="FILE" />
-    </root>
-
 </configuration>
