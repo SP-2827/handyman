@@ -80,7 +80,10 @@ action:
     |triageAttribution
     |loadExtractedData
     |absentKeyFilter
-    |sorFilter);
+    |sorFilter
+    |elasticStore
+    |pixelTextContentExtraction
+    |pixelJSONDataExtraction);
 
 
 multitude:
@@ -367,6 +370,32 @@ triageAttribution:
     'add-vilt-coco-threshold-config' viltCocoThreshold=STRING
     'save-response-as'  triageAttributionResponseName=STRING
     '{'  inputFilePath=STRING  '}' ('on-condition' condition=expression)*;
+
+
+pixelTextContentExtraction:
+    'pixel-text-data-extraction' 'as' name=STRING
+    'paper-no' paperNo=STRING
+    'file-id' inticsReferenceId=STRING
+    'using'
+    '{' inputFilePath=STRING '}' ('on-condition' condition=expression)*;
+
+
+pixelJSONDataExtraction:
+    'pixel-JSON-data-extraction' 'as' name=STRING
+    'paper-no' paperNo=STRING 'output-directory' outputDir=STRING
+    'file-id' inticsReferenceId=STRING 'max-doctr-diff' maxDoctrDiff=STRING
+    'max-question-diff' maxQuestionDiff=STRING
+    'using'
+    '{' inputFilePath=STRING '}' ('on-condition' condition=expression)*;
+
+elasticStore:
+    'store-data-in-es' 'as' name=STRING 'with-host' host=STRING
+    'user' user=STRING 'password' password=STRING
+    'index-name' indexName=STRING 'index-type' indexType=STRING
+    '{'
+         dataNode=STRING
+    '}' ('on-condition' condition=expression)*;
+
 
 resource : STRING;
 

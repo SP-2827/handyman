@@ -98,7 +98,7 @@ public class AbsentKeyFilterAction implements IActionExecution {
             if (hitsCount > 0) {
                 String indexId = filterList.hits().hits().get(0).id();
 
-                List<String> filteredSorList = new ArrayList<String>();
+                List<String> filteredSorList = new ArrayList<>();
                 for (JsonNode fieldName : sorQuestionList.get("f2")) {
                     String questionKey = fieldName.asText();
                     SearchResponse<Object> filteredQuestionList = elasticsearchClient
