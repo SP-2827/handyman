@@ -70,7 +70,7 @@ class RestApiActionTestExecutionAudit {
     @Test
     public void rootTest() {
         LContext request = LContext.builder()
-                .pipelineName("root.producer")
+                .pipelineName("root.processor")
                 .processLoadType(HRequestResolver.LoadType.FILE.name())
                 .build();
         log.info(request.toString());

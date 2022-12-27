@@ -94,7 +94,8 @@ action:
     |evalPatientName
     |evalMemberId
     |evalDateOfBirth
-    |thresholdCheck);
+    |thresholdCheck
+    |assetInfo);
 
 
 multitude:
@@ -530,6 +531,13 @@ urgencyTriage:
     'checkbox-image-width' checkboxImageWidth=STRING
     'checkbox-image-height' checkboxImageHeight=STRING
     'using'  '{' '}' ('on-condition' condition=expression)* ;
+
+assetInfo:
+	'assetInfo' 'as' name=STRING
+	'on-resource-conn' resourceConn=STRING
+	'using' '{' values=STRING '}' ('on-condition' condition=expression)* ;
+
+
 
 
 resource : STRING;
