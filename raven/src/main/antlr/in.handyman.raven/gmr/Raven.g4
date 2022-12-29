@@ -101,7 +101,9 @@ action:
     |alphavalidator
     |alphanumericvalidator
     |numericvalidator
-    |nervalidator);
+    |nervalidator
+    |phraseMatchPaperFilter
+    |zeroShotClassifierPaperFilter);
 
 
 multitude:
@@ -587,6 +589,23 @@ urgencyTriage:
     'checkbox-image-height' checkboxImageHeight=STRING
     'using'  '{' '}' ('on-condition' condition=expression)* ;
 
+phraseMatchPaperFilter:
+    'phrase-match-paper-filter' 'as' name=STRING
+    'with-origin-id' originId=STRING
+    'for-paper' paperNo=STRING 'group-id' groupId=STRING
+    'on-resource-conn' resourceConn=STRING
+    'for-page-content'  pageContent=STRING
+    'with-keys-to-filter' keysToFilter=STRING
+    '{'  '}'('on-condition' condition=expression)* ;
+
+zeroShotClassifierPaperFilter:
+    'zero-shot-classifier-paper-filter' 'as' name=STRING
+    'with-origin-id' originId=STRING
+    'for-paper' paperNo=STRING 'group-id' groupId=STRING
+    'on-resource-conn' resourceConn=STRING
+    'for-page-content'  pageContent=STRING
+    'with-keys-to-filter' keysToFilter=STRING
+    '{'  '}'('on-condition' condition=expression)* ;
 
 resource : STRING;
 
